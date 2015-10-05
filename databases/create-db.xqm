@@ -59,8 +59,9 @@ function _:create(
             </tr>
             <tr>
               <td colspan="2">
-                <h3>{ "textindex" ! html:checkbox("opts", ., $opts = ., 'Text Index') }</h3>
-                <h3>{ "attrindex" ! html:checkbox("opts", ., $opts = ., 'Attribute Index') }</h3>
+              <h3>{ "chop" ! html:checkbox("opts", ., $opts = ., 'Chop') }</h3>
+              <h3>{ "textindex" ! html:checkbox("opts", ., $opts = ., 'Text Index') }</h3>
+              <h3>{ "attrindex" ! html:checkbox("opts", ., $opts = ., 'Attribute Index') }</h3>
                 { "updindex" ! html:checkbox("opts", ., $opts = ., 'Incremental Indexing') }<br/>
                 <div class='small'/>
                 <h3>{ "ftindex" ! html:checkbox("opts", ., $opts = ., 'Fulltext Index') }</h3>
@@ -108,7 +109,7 @@ function _:create(
       error((), 'Database already exists: ' || $name || '.')
     ) else (
       db:create($name, (), (), map:merge((
-      (('textindex','attrindex','ftindex','stemming','casesens','diacritics','updindex') !
+      (('chop','textindex','attrindex','ftindex','stemming','casesens','diacritics','updindex') !
          map:entry(., $opts = .)), $lang ! map:entry('language', .))
       ))
     )", map { 'name': $name, 'lang': $lang, 'opts': $opts }),
