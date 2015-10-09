@@ -46,7 +46,8 @@ declare function tmpl:wrap(
       { $options('scripts') ! <script type="text/javascript" src="static/{.}"/> }
     </head>
     <body>
-      <div class="right"><img style='padding-left:10px;padding-bottom:10px;' src="static/basex.svg"/></div>
+      <div class="right"> <img style='padding-left:10px;padding-bottom:10px;' src="static/basex.svg"/>     </div>
+      <span><a href="/" title="Back to webapp home">Webapp home</a></span>
       <h1>Database Administration</h1>
       <div>{
         let $emph := <span>{(element b {
